@@ -1,4 +1,4 @@
-import './WhereToBuy.css';
+import "./Where-to-buy.css";
 
 function WhereToBuy() {
   return (
@@ -39,3 +39,4 @@ function WhereToBuy() {
     </main>
   );
 }
+export default WhereToBuy;
