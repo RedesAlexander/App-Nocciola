@@ -5,6 +5,7 @@ import About from './components/About/About'
 import Footer from './components/Footer/Footer'
 import Contact from './components/Contact/contact';
 import './App.css'
+import Recipes from './components/Recipes/Recipes'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/recipes" element={<Recipes />} />
         </Routes>
       </main>
 
