@@ -1,0 +1,79 @@
+/* --- CONTENEDOR PRINCIPAL --- */
+.where-to-buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+
+.where-to-buy-cards {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* --- TARJETAS --- */
+.where-to-buy-card {
+  width: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fondos superiores de las tarjetas */
+.where-to-buy-top {
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.bg-pistachio {
+  background-color: #9bb68b;
+}
+
+.bg-almond {
+  background-color: #f1d5b6;
+}
+
+.where-to-buy-image {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Parte inferior de las tarjetas */
+.where-to-buy-bottom {
+  background-color: #fdebeb; /* El tono rosado claro */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.where-to-buy-name {
+  font-weight: 700;
+  color: #333333;
+  font-size: 1.1rem;
+}
+
+/* Botón de compra */
+.where-to-buy-btn {
+  background-color: #e13b2b; /* El rojo corporativo */
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.where-to-buy-btn:hover {
+  opacity: 0.85;
+}
