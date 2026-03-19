@@ -9,7 +9,7 @@ function WhereToBuy() {
         <div className="where-to-buy-card">
           <div className="where-to-buy-top bg-pistachio">
             <img
-              src="ruta-de-tu-imagen-pistacho.png"
+              src="public/img/pistachocream.jpg"
               alt="Pistachio Cream Jar"
               className="where-to-buy-image"
             />
@@ -27,7 +27,7 @@ function WhereToBuy() {
         <div className="where-to-buy-card">
           <div className="where-to-buy-top bg-almond">
             <img
-              src="ruta-de-tu-imagen-almendra.png"
+              src="public/img/turroncream.png"
               alt="Creamy Almond Jar"
               className="where-to-buy-image"
             />
