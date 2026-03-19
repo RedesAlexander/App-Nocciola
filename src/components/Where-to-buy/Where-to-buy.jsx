@@ -16,7 +16,10 @@ function WhereToBuy() {
           </div>
           <div className="where-to-buy-bottom">
             <span className="where-to-buy-name">Pistachio Cream</span>
-            <button className="where-to-buy-btn">BUY NOW</button>
+            <button
+            className="where-to-buy-btn"
+            onClick={() => window.open("https://super-market-gourmet.com/Supermercado_Practica/public/producto.php?id=68dbb2128bf6a37edb769eb2&categoria=NOCCIOLA",
+                "_blank", "noopener,noreferrer")}>BUY NOW</button>
           </div>
         </div>
 
@@ -31,7 +34,10 @@ function WhereToBuy() {
           </div>
           <div className="where-to-buy-bottom">
             <span className="where-to-buy-name">Creamy Almond</span>
-            <button className="where-to-buy-btn">BUY NOW</button>
+            <button
+            className="where-to-buy-btn"
+            onClick={() => window.open("https://super-market-gourmet.com/Supermercado_Practica/public/producto.php?id=6899d44325d53643ce0e513d&categoria=NOCCIOLA",
+                "_blank", "noopener,noreferrer")}>BUY NOW</button>
           </div>
         </div>
 
