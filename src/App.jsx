@@ -3,6 +3,7 @@ import Navbar from './components/Navbar/Navbar'
 import Home from './components/Home/Home'
 import About from './components/About/About'
 import Footer from './components/Footer/Footer'
+import WhereToBuy from './components/Where-to-buy/Where-to-buy';
 import Contact from './components/Contact/contact';
 import './App.css'
 import Recipes from './components/Recipes/Recipes'
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/where-to-buy" element={<WhereToBuy />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/recipes" element={<Recipes />} />
         </Routes>
