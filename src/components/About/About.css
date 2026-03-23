@@ -1,50 +1,41 @@
+/* --- SECCIÓN PRINCIPAL --- */
 .about-section {
   background-color: #E63946;
-  padding: 4rem 0;
+  padding: 4rem 20px;
   min-height: calc(100vh - 80px);
   display: flex;
+  justify-content: center; /* Añadido para centrar el bloque horizontalmente */
   align-items: center;
 }
 
+/* --- CONTENEDOR CENTRAL --- */
 .about-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.about-image {
-  width: 100%;
-}
-
-.image-placeholder {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px dashed rgba(255, 255, 255, 0.3);
-  border-radius: 12px;
-  aspect-ratio: 3/4;
+  /* Sustituimos el Grid de dos columnas por Flexbox centrado */
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  text-align: center;
+  width: 100%;
 }
 
 .about-text {
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Asegura que el logo y el texto estén perfectamente alineados */
 }
 
-.about-title {
-  font-size: 4.5rem;
-  font-weight: 700;
+/* --- ESTILOS DEL LOGO --- */
+.about-logo {
+  max-width: 300px; /* Controla el tamaño. */
+  width: 100%;      /* Hace que se adapte bien en pantallas de móviles */
+  height: auto;     /* Evita que la imagen se deforme o aplaste */
   margin-bottom: 2rem;
-  letter-spacing: -1px;
-  line-height: 1;
 }
 
+/* --- ESTILOS DE TEXTO --- */
 .about-description {
-  max-width: 500px;
+  max-width: 600px; /* Evita que las líneas de texto sean demasiado largas en pantallas grandes */
 }
 
 .about-description p {
@@ -58,4 +49,5 @@
   font-size: 1rem;
   opacity: 0.9;
   font-style: italic;
+  margin-top: 1rem;
 }
