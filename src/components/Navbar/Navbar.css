@@ -91,15 +91,12 @@
   transform: translateX(-50%);
 }
 
-.logo a {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #E63946;
-  letter-spacing: 2px;
-  text-decoration: none;
+.logo a img {
+  height: 50px; /* Ajusta según el tamaño del logo */
+  object-fit: contain;
   transition: opacity 0.3s ease;
 }
 
-.logo a:hover {
+.logo a img:hover {
   opacity: 0.8;
 }

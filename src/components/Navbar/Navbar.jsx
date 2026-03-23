@@ -29,7 +29,9 @@ function Navbar() {
 
           {/* CENTRO - LOGO */}
           <div className="logo">
-            <Link to="/">NOCCIOLA</Link>
+            <Link to="/">
+              <img src="/img/LOGO_NOCCIOLA.jpg" alt="Nocciola Logo" />
+            </Link>
           </div>
 
           {/* DERECHA */}
