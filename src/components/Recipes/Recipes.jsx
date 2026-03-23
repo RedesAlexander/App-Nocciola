@@ -12,14 +12,14 @@ function Recipes() {
         <RecipeCard
           title="Pistachio CheeseCake"
           description="The Pistachio Cheesecake begins with a simple crust made from crushed cookies mixed with melted butter and pressed into a pan. The filling is prepared by blending cream cheese, sugar, eggs, and a generous amount of pistachio cream, which gives the cheesecake its rich flavor and signature green hue. Once the mixture is poured over the crust, it is baked or chilled depending on the chosen method. After cooling, the cheesecake is topped with chopped pistachios or extra pistachio cream and left to rest in the refrigerator until it reaches the perfect creamy texture for serving."
-          image="img\7f50cc5856808f596654e4b7989b885c0a044a7c.png"
+          image="/img/7f50cc5856808f596654e4b7989b885c0a044a7c.png"
           buttonText="FULL RECIPE"
           onButtonClick={() => console.log("Abrir receta")}
         />
         <RecipeCard
           title="Pistachio CheeseCake"
           description="The Pistachio Cheesecake begins with a simple crust made from crushed cookies mixed with melted butter and pressed into a pan. The filling is prepared by blending cream cheese, sugar, eggs, and a generous amount of pistachio cream, which gives the cheesecake its rich flavor and signature green hue. Once the mixture is poured over the crust, it is baked or chilled depending on the chosen method. After cooling, the cheesecake is topped with chopped pistachios or extra pistachio cream and left to rest in the refrigerator until it reaches the perfect creamy texture for serving."
-          image="img\7f50cc5856808f596654e4b7989b885c0a044a7c.png"
+          image="/img/7f50cc5856808f596654e4b7989b885c0a044a7c.png"
           buttonText="FULL RECIPE"
           onButtonClick={() => console.log("Abrir receta")}
         />
@@ -31,25 +31,25 @@ function Recipes() {
         <div id="container_videoCards">
           <VideoCard
             title="Creamy Almond"
-            image="/images/creamy-almond.png"
+            image="/img/creamy-almond.png"
             buttonText="FULL VIDEO"
             onButtonClick={() => console.log("Abrir video")}
           />
           <VideoCard
             title="Creamy Almond"
-            image="/images/creamy-almond.png"
+            image="/img/creamy-almond.png"
             buttonText="FULL VIDEO"
             onButtonClick={() => console.log("Abrir video")}
           />
           <VideoCard
             title="Creamy Almond"
-            image="/images/creamy-almond.png"
+            image="/img/creamy-almond.png"
             buttonText="FULL VIDEO"
             onButtonClick={() => console.log("Abrir video")}
           />
           <VideoCard
             title="Creamy Almond"
-            image="/images/creamy-almond.png"
+            image="/img/creamy-almond.png"
             buttonText="FULL VIDEO"
             onButtonClick={() => console.log("Abrir video")}
           />
