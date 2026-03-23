@@ -8,7 +8,7 @@
   background-color: #ffffff;
 }
 
-//* --- SELECTOR DE REGIÓN --- */
+/* --- SELECTOR DE REGIÓN --- */
  .region-selector-container {
    align-self: flex-start; /* Mueve el bloque arriba a la izquierda */
    display: flex;
