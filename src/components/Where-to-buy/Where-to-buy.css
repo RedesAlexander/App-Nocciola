@@ -1,11 +1,44 @@
 /* --- CONTENEDOR PRINCIPAL --- */
 .where-to-buy {
   display: flex;
+  flex-direction: column; /* Añadido para apilar el selector y las tarjetas verticalmente */
   justify-content: center;
   align-items: center;
   padding: 60px 20px;
   background-color: #ffffff;
 }
+
+/* --- SELECTOR DE REGIÓN --- */
+ .region-selector-container {
+   align-self: flex-start; /* Mueve el bloque arriba a la izquierda */
+   display: flex;
+   align-items: center; /* Centra el texto y la caja verticalmente */
+   gap: 12px; /* Añade espacio entre la palabra "Region:" y el selector */
+   margin-bottom: 40px;
+   padding-left: 5%; /* Un pequeño margen para que no se pegue al borde absoluto de la pantalla */
+ }
+
+ .region-selector-container label {
+   /* Ya no ocultamos el texto */
+   display: block;
+   font-weight: 700;
+   color: #333333;
+   font-size: 1rem;
+ }
+
+ .region-dropdown {
+   color: #a32a22;
+   font-family: inherit;
+   font-weight: 700;
+   font-size: 0.9rem; /* Tamaño de tipografía reducido */
+   background-color: #ffffff;
+   padding: 8px 16px; /* Caja más estrecha y proporcionada */
+   border: 1px solid #e8e8e8;
+   border-radius: 6px;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Sombra un poco más sutil */
+   cursor: pointer;
+   outline: none;
+ }
 
 .where-to-buy-cards {
   display: flex;
@@ -34,11 +67,11 @@
 }
 
 .bg-pistachio {
-  background-color: #9bb68b;
+  background-color: #ffffff;
 }
 
 .bg-almond {
-  background-color: #f1d5b6;
+  background-color: #ffffff;
 }
 
 .where-to-buy-image {
