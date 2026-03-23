@@ -30,7 +30,7 @@ function WhereToBuy() {
 
       {/* Selector de Región */}
       <div className="region-selector-container">
-        <label htmlFor="region-select">Select Region: </label>
+        <label htmlFor="region-select">Region: </label>
         <select
           id="region-select"
           value={region}
