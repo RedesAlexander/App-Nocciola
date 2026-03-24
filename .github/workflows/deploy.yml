@@ -1,0 +1,39 @@
+name: Despliegue Nocciola Web
+
+on:
+push:
+branches:
+- main
+
+jobs:
+build-and-deploy:
+runs-on: ubuntu-latest
+
+steps:
+  # 1. Clonar repo
+  - name: Checkout repository
+    uses: actions/checkout@v4
+
+  # 2. Configurar Node
+  - name: Setup Node
+    uses: actions/setup-node@v4
+    with:
+      node-version: 20
+
+  # 3. Instalar dependencias
+  - name: Install dependencies
+    run: npm install
+
+  # 4. Build del proyecto
+  - name: Build project
+    run: npm run build
+
+  # 5. Deploy por FTP
+  - name: Deploy to Dinahosting
+    uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    with:
+      server: hl1599.dinaserver.com
+      username: ${{ secrets.FTP_USER }}
+      password: ${{ secrets.FTP_PASS }}
+      local-dir: dist/
+      server-dir: /www/
