@@ -9,6 +9,9 @@ import Footer from './components/Footer/Footer';
 import Contact from './components/Contact/contact';
 import WhereToBuy from './components/Where-to-buy/Where-to-buy';
 import Recipes from './components/Recipes/Recipes';
+import TermsAndConditions from './components/TermsAndConditions/TermsAndConditions'
+import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy'
+
 import './App.css';
 
 function App() {
@@ -26,6 +29,8 @@ function App() {
           <Route path="/where-to-buy" element={<WhereToBuy />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/recipes" element={<Recipes />} />
+          <Route path="/terms" element={<TermsAndConditions />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
         </Routes>
       </main>
 
