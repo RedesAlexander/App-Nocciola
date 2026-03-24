@@ -1,159 +1,283 @@
-/* ===== 1. ESTILOS BASE (DESKTOP) ===== */
+:root{  /* reduce para estrechar el contenido central (ej: 900px si quieres aún más) */
+  --container-side-padding: 1rem;  /* padding lateral del container */
+
+  --accent: #E63946;
+  --text: #2b2b2b;
+  --page-bg: #ffff; /* color de fondo global */
+}
+
+/* Normalizar caja */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+/* Fondo global y reset de márgenes para evitar franjas */
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--page-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Evitar que el contenido quede bajo el header; main debe existir en tu layout */
+main { padding-top: var(--header-height); }
+@media (max-width: 768px) { main { padding-top: var(--header-height-mobile); } }
+
+/* ===== HEADER =====
+   - Sin doble franja: header sin borde inferior, container transparente,
+     z-index controlado para que no se muestre una banda blanca debajo. */
 .header {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 80px;
-background-color: #ffffff;
-z-index: 1000;
-box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 4%;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: #ffffff; /* header blanco; si quieres otro color, cámbialo */
+  z-index: 1200; /* suficientemente alto para estar encima del resto */
+  box-shadow: none; /* quitar sombra que puede parecer franja; pon none */
+  border-bottom: 0; /* asegurar que no haya borde que cree franja */
 }
+@media (max-width: 768px) { .header { height: var(--header-height-mobile); } }
 
+/* Container: transparente para que no cree franja */
 .container {
-max-width: 1200px;
-width: 100%;
-margin: 0 auto;
-padding: 0 1.5rem;
-height: 100%;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
+/* ===== HEADER-CONTENT (relativo para centrar logo) ===== */
 .header-content {
-display: flex;
-justify-content: space-between;
-align-items: center;
-height: 100%;
-gap: 20px; /* Espacio de seguridad */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-/* ===== LOGOS ===== */
-.logo img {
-height: 50px;
-width: auto;
-flex-shrink: 0;
+/* ===== NAVS (izquierda y derecha) ===== */
+.nav {
+  display: flex;
+  align-items: center;
 }
-
-.logo-nociola {
-width: 100%;
-max-width: 200px;
-margin: 0 auto;
-flex-shrink: 0;
+.nav-left,
+.nav-right {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  transition: opacity .18s ease, visibility .18s ease, transform .18s ease;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  z-index: 1100; /* por debajo del logo (logo z-index 1300) */
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
-
-.logo-nociola img {
-width: 100%;
-height: auto;
-display: block;
-}
-
-/* ===== NAVEGACIÓN ===== */
-.nav-left, .nav-right {
-display: flex;
-gap: 2rem;
-align-items: center;
-flex: 1; /* Distribuye el espacio equitativamente */
-}
-
-.nav-left { justify-content: flex-start;}
-.nav-right { justify-content: flex-end; }
-
 .nav-list {
-display: flex;
-gap: 2rem;
-list-style: none;
-margin: 0;
-padding: 0;
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
 }
-
 .nav-link {
-font-size: 0.9rem;
-font-weight: 600;
-letter-spacing: 1px;
-color: #2b2b2b;
-text-decoration: none;
-position: relative;
-padding: 0.5rem 0;
-white-space: nowrap;
-transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: all 0.2s ease;
+  background: transparent;
+  border: 0;
 }
-
 .nav-link::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 0;
-width: 0;
-height: 2px;
-background-color: #E63946;
-transition: width 0.3s ease;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.25s ease;
 }
-
 .nav-link:hover::after,
-.nav-link.active::after {
-width: 100%;
+.nav-link.active::after { width: 100%; }
+.nav-link:hover, .nav-link.active { color: var(--accent); }
+
+/* ===== LOGO (siempre centrado) =====
+   - pointer-events controlado para evitar bloquear botones */
+.logo-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  z-index: 1300;
+  pointer-events: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.logo-center a { pointer-events: auto; display: inline-block; line-height: 1; }
+.logo-center img {
+  height: 50px;
+  width: auto;
+  display: block;
+  max-width: 100%;
+}
+@media (max-width: 768px) { .logo-center img { height: 40px; } }
+
+/* ===== HAMBURGER (SVG 3 líneas) ===== */
+.hamburger {
+  display: none;
+  background: transparent;
+  border: 0;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1400; /* por encima del logo para que sea clicable */
+  color: var(--text);
 }
 
-.nav-link:hover,
-.nav-link.active {
-color: #E63946;
+/* Estilos de las líneas (transformaciones para convertir en X) */
+.hamburger .menu-lines .line {
+  transition: transform .22s ease, opacity .18s ease;
+  transform-origin: center;
+}
+.hamburger .menu-lines .line1 { transform-origin: 3px 6px; }
+.hamburger .menu-lines .line3 { transform-origin: 3px 18px; }
+
+/* Estado abierto: animar a X */
+.hamburger.is-open .menu-lines .line1 {
+  transform: translateY(6px) rotate(45deg);
+}
+.hamburger.is-open .menu-lines .line2 {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.is-open .menu-lines .line3 {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
-/* ===== 2. RESPONSIVE TABLET (Max 1024px) ===== */
-@media (max-width: 1024px) {
-.nav-left, .nav-right, .nav-list {
-gap: 1.2rem;
-}
-.nav-link {
-font-size: 0.8rem;
-}
-.logo-nociola {
-max-width: 160px;
-}
-}
-
-/* ===== 3. RESPONSIVE MÓVIL (Max 768px - LA CORRECCIÓN CLAVE) ===== */
+/* Mostrar hamburger en móvil */
 @media (max-width: 768px) {
-.header {
-height: 70px; /* Reducimos altura para ganar espacio vertical */
+  .hamburger { display: flex; }
+  .nav-desktop { display: none; } /* oculta nav derecha en móvil (hamburger controla todo) */
+
+  /* Ocultar navs inmediatamente cuando aparece el hamburger */
+  .nav-left,
+  .nav-right {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transform: translateY(-4px) !important;
+    pointer-events: none !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .logo-center img { height: 40px; }
+  .sidebar-list a { font-size: 0.95rem; }
+
+  .header.menu-open .nav { display: none; }
 }
 
-.container {
-padding: 0 0.5rem; /* Menos margen lateral para que quepa todo */
+/* ===== SIDEBAR & OVERLAY =====
+   - overlay por debajo del header para que no cree franja visible;
+     sidebar por encima si quieres que cubra header cuando abre. */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s, visibility .25s;
+  z-index: 1180; /* por debajo del header (1200) para que header no "desaparezca" */
+}
+.overlay.visible { opacity: 1; visibility: visible; }
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: var(--sidebar-width);
+  max-width: var(--sidebar-max-width);
+  background: #fff;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.12);
+  transform: translateX(-110%);
+  transition: transform .28s cubic-bezier(.2,.9,.2,1);
+  z-index: 1250; /* por encima del header si quieres que lo cubra al abrir */
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.sidebar.open { transform: translateX(0); }
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.sidebar-list li {
+  border-bottom: 1px solid #eee;
+  padding: 0.9rem 0;
+}
+.sidebar-list a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  display: block;
+  font-size: 1rem;
 }
 
-.header-content {
-gap: 8px; /* Espacio mínimo entre menús y logo central */
+/* Evitar scroll cuando sidebar abierto */
+.no-scroll { overflow: hidden; }
+
+/* ===== OCULTAR CUANDO EL MENÚ LATERAL ESTÁ ABIERTO ===== */
+.header.menu-open .nav-left,
+.header.menu-open .nav-right {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
 }
 
-.logo-nociola {
-max-width: 90px; /* Reducido drásticamente para dar aire a los lados */
+/* Tablet */
+@media (max-width: 1024px) {
+  .nav-list { gap: 1.2rem; }
+  .nav-link { font-size: 0.85rem; }
 }
 
-.nav-left, .nav-right, .nav-list {
-gap: 0.6rem; /* Espacio muy ajustado entre palabras */
-}
-
-.nav-link {
-font-size: 0.65rem; /* Tipografía pequeña pero legible */
-letter-spacing: 0.3px;
-font-weight: 700; /* Un poco más de grosor para compensar el tamaño */
-}
-
-/* Si el texto es muy largo, esto evita que se encimen */
-.nav-right .nav-link {
-padding-left: 2px;
-}
-}
-
-/* ===== 4. MÓVILES MUY PEQUEÑOS (Max 380px) ===== */
+/* Móviles muy pequeños */
 @media (max-width: 380px) {
-.logo-nociola {
-max-width: 75px;
-}
-.nav-link {
-font-size: 0.6rem;
-}
-.nav-left, .nav-right {
-gap: 0.4rem;
-}
+  :root { --sidebar-width: 85%; }
+  .logo-center img { height: 36px; }
+  .sidebar-list a { font-size: 0.92rem; }
 }
