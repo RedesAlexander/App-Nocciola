@@ -1,10 +1,10 @@
 /* --- CONTENEDOR PRINCIPAL --- */
 .where-to-buy {
   display: flex;
-  flex-direction: column; /* Añadido para apilar el selector y las tarjetas verticalmente */
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  padding: 60px 20px;
+  padding: 0px 20px 0px 20px; /* (Arriba 0, Derecha 20, Abajo 0, Izquierda 20) */
   background-color: #ffffff;
 }
 
@@ -19,7 +19,6 @@
 }
 
 .region-selector-container label {
-  /* Ya no ocultamos el texto */
   display: block;
   font-weight: 700;
   color: #333333;
@@ -50,7 +49,7 @@
 
 /* --- TARJETAS --- */
 .where-to-buy-card {
-  width: 320px;
+  width: 380px; /* Aumentado para tarjetas más grandes */
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -59,7 +58,7 @@
 
 /* Fondos superiores de las tarjetas */
 .where-to-buy-top {
-  height: 250px;
+  height: 320px; /* Aumentado para dar más espacio a las imágenes */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +74,7 @@
 }
 
 .where-to-buy-image {
-  max-width: 80%;
+  max-width: 100%;
   height: auto;
   object-fit: contain;
 }
@@ -94,16 +93,16 @@
 .where-to-buy-name {
   font-weight: 700;
   color: #333333;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   text-align: center;
 }
 
 /* Botón de compra */
 .where-to-buy-btn {
-  background-color: #e13b2b; /* El rojo corporativo */
+  background-color: #e13b2b;
   color: #ffffff;
   border: none;
-  padding: 12px 30px; /* Botón un poco más grande */
+  padding: 12px 30px;
   border-radius: 4px;
   font-weight: 700;
   cursor: pointer;
