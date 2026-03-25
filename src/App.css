@@ -1,4 +1,18 @@
+/* ===== MAIN CONTENT ===== */
 main {
-  margin-top: 80px;
+  margin-top: 90px;
   min-height: calc(100vh - 80px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    margin-top: 60px;
+  }
 }
