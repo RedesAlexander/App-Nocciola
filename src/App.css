@@ -1,124 +1,18 @@
-/* ===== GLOBAL LAYOUT ===== */
-
+/* ===== MAIN CONTENT ===== */
 main {
-  margin-top: 0 !important;
-  min-height: 100vh;
+  margin-top: 90px;
+  min-height: calc(100vh - 80px);
 }
 
-/* ===== HEADER ===== */
-
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--header-height);
-  background-color: #ffffff;
-  z-index: 1200;
-  display: flex;
-  align-items: center;
-}
-
-/* Contenedor general del header */
-.header-content {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-/* ===== LOGO CENTRADO PERFECTO ===== */
-
-.logo-center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1300;
-  white-space: nowrap;
-}
-
-/* ===== NAV LEFT ===== */
-
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  position: absolute;
-  left: 0;
-  transform: translateX(180px); /* muy cerca del logo */
-}
-
-/* ===== NAV RIGHT ===== */
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  position: absolute;
-  right: 0;
-  transform: translateX(-180px); /* muy cerca del logo */
-}
-
-/* ===== SEARCH ICON ===== */
-
-.nav-link--icon {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ===== RESPONSIVE ===== */
-
-/* Pantallas medianas */
-@media (max-width: 1100px) {
-  .nav-left {
-    transform: translateX(120px);
-  }
-
-  .nav-right {
-    transform: translateX(-120px);
+/* Responsive */
+@media (max-width: 768px) {
+  main {
+    margin-top: 70px;
   }
 }
 
-/* Pantallas más pequeñas */
-@media (max-width: 900px) {
-  .nav-left {
-    transform: translateX(80px);
-  }
-
-  .nav-right {
-    transform: translateX(-80px);
-  }
-
-  .logo-center {
-    transform: translate(-50%, -50%) scale(0.9);
-  }
-}
-
-/* Móvil */
-@media (max-width: 700px) {
-  .nav-left,
-  .nav-right {
-    gap: 0.5rem;
-    transform: none;
-    position: static;
-  }
-
-  .header-content {
-    justify-content: space-between;
-  }
-
-  .logo-center {
-    position: static;
-    transform: none;
-    margin: 0 auto;
-    text-align: center;
+@media (max-width: 480px) {
+  main {
+    margin-top: 60px;
   }
 }
