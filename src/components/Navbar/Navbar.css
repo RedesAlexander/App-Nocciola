@@ -1,9 +1,12 @@
-:root{  /* reduce para estrechar el contenido central (ej: 900px si quieres aún más) */
-  --container-side-padding: 1rem;  /* padding lateral del container */
+:root{
+  --container-side-padding: 1rem;
 
   --accent: #E63946;
   --text: #2b2b2b;
-  --page-bg: #ffff; /* color de fondo global */
+  --page-bg: #ffff;
+
+  --header-height: 90px;
+  --header-height-mobile: 70px;
 }
 
 /* Normalizar caja */
@@ -11,7 +14,7 @@
 *::before,
 *::after { box-sizing: border-box; }
 
-/* Fondo global y reset de márgenes para evitar franjas */
+/* Fondo global */
 html, body {
   height: 100%;
   margin: 0;
@@ -20,27 +23,30 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Evitar que el contenido quede bajo el header; main debe existir en tu layout */
+/* Evitar que el contenido quede bajo el header */
 main { padding-top: var(--header-height); }
-@media (max-width: 768px) { main { padding-top: var(--header-height-mobile); } }
+@media (max-width: 768px) {
+  main { padding-top: var(--header-height-mobile); }
+}
 
-/* ===== HEADER =====
-   - Sin doble franja: header sin borde inferior, container transparente,
-     z-index controlado para que no se muestre una banda blanca debajo. */
+/* ===== HEADER ===== */
 .header {
   position: fixed;
-  top: 4%;
+  top: 0; /* pegado arriba */
   left: 0;
   width: 100%;
   height: var(--header-height);
-  background-color: #ffffff; /* header blanco; si quieres otro color, cámbialo */
-  z-index: 1200; /* suficientemente alto para estar encima del resto */
-  box-shadow: none; /* quitar sombra que puede parecer franja; pon none */
-  border-bottom: 0; /* asegurar que no haya borde que cree franja */
+  background-color: #ffffff;
+  z-index: 1200;
+  box-shadow: none;
+  border-bottom: 0;
+  overflow: visible;
 }
-@media (max-width: 768px) { .header { height: var(--header-height-mobile); } }
+@media (max-width: 768px) {
+  .header { height: var(--header-height-mobile); }
+}
 
-/* Container: transparente para que no cree franja */
+/* Container */
 .container {
   max-width: 1200px;
   width: 100%;
@@ -50,11 +56,9 @@ main { padding-top: var(--header-height); }
   display: flex;
   align-items: center;
   background: transparent;
-  border: 0;
-  box-shadow: none;
 }
 
-/* ===== HEADER-CONTENT (relativo para centrar logo) ===== */
+/* ===== HEADER CONTENT ===== */
 .header-content {
   position: relative;
   display: flex;
@@ -63,53 +67,42 @@ main { padding-top: var(--header-height); }
   width: 100%;
   gap: 12px;
   height: 100%;
-  padding: 0;
-  margin: 0;
 }
 
-/* ===== NAVS (izquierda y derecha) ===== */
+/* ===== NAV ===== */
 .nav {
   display: flex;
   align-items: center;
 }
+
 .nav-left,
 .nav-right {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 0;
-  padding: 0;
-  transition: opacity .18s ease, visibility .18s ease, transform .18s ease;
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-  z-index: 1100; /* por debajo del logo (logo z-index 1300) */
-  background: transparent;
-  border: 0;
-  box-shadow: none;
+  z-index: 1100;
 }
+
 .nav-list {
   display: flex;
   gap: 1.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
-  align-items: center;
 }
+
 .nav-link {
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 1px;
   color: var(--text);
   text-decoration: none;
-  position: relative;
   padding: 0.5rem 0;
   transition: all 0.2s ease;
-  background: transparent;
-  border: 0;
+  position: relative;
 }
+
 .nav-link::after {
   content: '';
   position: absolute;
@@ -120,34 +113,36 @@ main { padding-top: var(--header-height); }
   background-color: var(--accent);
   transition: width 0.25s ease;
 }
+
 .nav-link:hover::after,
 .nav-link.active::after { width: 100%; }
 .nav-link:hover, .nav-link.active { color: var(--accent); }
 
-/* ===== LOGO (siempre centrado) =====
-   - pointer-events controlado para evitar bloquear botones */
+/* ===== LOGO CENTRADO ===== */
 .logo-center {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 52%; /* centrado perfecto y más cerca del menú */
   transform: translate(-50%, -50%);
-  transform-origin: center;
   z-index: 1300;
   pointer-events: none;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
 }
-.logo-center a { pointer-events: auto; display: inline-block; line-height: 1; }
+
+.logo-center a {
+  pointer-events: auto;
+  display: inline-block;
+}
+
 .logo-center img {
   height: 50px;
   width: auto;
   display: block;
-  max-width: 100%;
 }
-@media (max-width: 768px) { .logo-center img { height: 40px; } }
+@media (max-width: 768px) {
+  .logo-center img { height: 40px; }
+}
 
-/* ===== HAMBURGER (SVG 3 líneas) ===== */
+/* ===== HAMBURGER ===== */
 .hamburger {
   display: none;
   background: transparent;
@@ -157,58 +152,40 @@ main { padding-top: var(--header-height); }
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  padding: 0;
-  z-index: 1400; /* por encima del logo para que sea clicable */
-  color: var(--text);
+  z-index: 1400;
 }
 
-/* Estilos de las líneas (transformaciones para convertir en X) */
 .hamburger .menu-lines .line {
   transition: transform .22s ease, opacity .18s ease;
-  transform-origin: center;
 }
-.hamburger .menu-lines .line1 { transform-origin: 3px 6px; }
-.hamburger .menu-lines .line3 { transform-origin: 3px 18px; }
 
-/* Estado abierto: animar a X */
-.hamburger.is-open .menu-lines .line1 {
+/* Estado abierto */
+.hamburger.is-open .line1 {
   transform: translateY(6px) rotate(45deg);
 }
-.hamburger.is-open .menu-lines .line2 {
+.hamburger.is-open .line2 {
   opacity: 0;
-  transform: scaleX(0);
 }
-.hamburger.is-open .menu-lines .line3 {
+.hamburger.is-open .line3 {
   transform: translateY(-6px) rotate(-45deg);
 }
 
 /* Mostrar hamburger en móvil */
 @media (max-width: 768px) {
   .hamburger { display: flex; }
-  .nav-desktop { display: none; } /* oculta nav derecha en móvil (hamburger controla todo) */
+  .nav-desktop { display: none; }
 
-  /* Ocultar navs inmediatamente cuando aparece el hamburger */
   .nav-left,
   .nav-right {
     display: none !important;
-    visibility: hidden !important;
     opacity: 0 !important;
-    transform: translateY(-4px) !important;
     pointer-events: none !important;
-    background: transparent !important;
-    border: 0 !important;
-    box-shadow: none !important;
   }
 
   .logo-center img { height: 40px; }
-  .sidebar-list a { font-size: 0.95rem; }
-
-  .header.menu-open .nav { display: none; }
 }
 
-/* ===== SIDEBAR & OVERLAY =====
-   - overlay por debajo del header para que no cree franja visible;
-     sidebar por encima si quieres que cubra header cuando abre. */
+/* ===== SIDEBAR ===== */
 .overlay {
   position: fixed;
   inset: 0;
@@ -216,9 +193,13 @@ main { padding-top: var(--header-height); }
   opacity: 0;
   visibility: hidden;
   transition: opacity .25s, visibility .25s;
-  z-index: 1180; /* por debajo del header (1200) para que header no "desaparezca" */
+  z-index: 1180;
 }
-.overlay.visible { opacity: 1; visibility: visible; }
+
+.overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
 
 .sidebar {
   position: fixed;
@@ -231,53 +212,106 @@ main { padding-top: var(--header-height); }
   box-shadow: 2px 0 12px rgba(0,0,0,0.12);
   transform: translateX(-110%);
   transition: transform .28s cubic-bezier(.2,.9,.2,1);
-  z-index: 1250; /* por encima del header si quieres que lo cubra al abrir */
+  z-index: 1250;
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 }
+
 .sidebar.open { transform: translateX(0); }
 
 .sidebar-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  width: 100%;
 }
+
 .sidebar-list li {
   border-bottom: 1px solid #eee;
   padding: 0.9rem 0;
 }
+
 .sidebar-list a {
   color: var(--text);
   text-decoration: none;
   font-weight: 700;
-  display: block;
-  font-size: 1rem;
 }
 
 /* Evitar scroll cuando sidebar abierto */
 .no-scroll { overflow: hidden; }
 
-/* ===== OCULTAR CUANDO EL MENÚ LATERAL ESTÁ ABIERTO ===== */
-.header.menu-open .nav-left,
-.header.menu-open .nav-right {
-  visibility: hidden;
+/* ===== SEARCH ===== */
+.nav-item--search {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link--icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.nav-link--icon:hover {
+  background: rgba(230,57,70,0.06);
+  border-color: rgba(230,57,70,0.12);
+}
+
+.search-form {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  display: flex;
+  gap: 8px;
+  background: #fff;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(11,15,20,0.08);
   opacity: 0;
-  transform: translateY(-4px);
-  pointer-events: none;
+  visibility: hidden;
+  transform: translateY(-6px) scale(.98);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+  min-width: 260px;
+  z-index: 1600;
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .nav-list { gap: 1.2rem; }
-  .nav-link { font-size: 0.85rem; }
+.search-form.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
 }
 
-/* Móviles muy pequeños */
-@media (max-width: 380px) {
-  :root { --sidebar-width: 85%; }
-  .logo-center img { height: 36px; }
-  .sidebar-list a { font-size: 0.92rem; }
+.search-input {
+  flex: 1;
+  border: 1px solid rgba(0,0,0,0.04);
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #fff, #fbfbfb);
+}
+
+.search-submit {
+  background: var(--accent);
+  color: #fff;
+  border: 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+  .search-form {
+    left: 8px;
+    right: 8px;
+    top: calc(100% + 8px);
+    min-width: auto;
+  }
 }
