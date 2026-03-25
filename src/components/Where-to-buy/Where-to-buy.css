@@ -9,37 +9,38 @@
 }
 
 /* --- SELECTOR DE REGIÓN --- */
- .region-selector-container {
-   align-self: flex-start; /* Mueve el bloque arriba a la izquierda */
-   display: flex;
-   align-items: center; /* Centra el texto y la caja verticalmente */
-   gap: 12px; /* Añade espacio entre la palabra "Region:" y el selector */
-   margin-bottom: 40px;
-   padding-left: 5%; /* Un pequeño margen para que no se pegue al borde absoluto de la pantalla */
- }
+.region-selector-container {
+  align-self: flex-start; /* Mueve el bloque arriba a la izquierda */
+  display: flex;
+  align-items: center; /* Centra el texto y la caja verticalmente */
+  gap: 12px; /* Añade espacio entre la palabra "Region:" y el selector */
+  margin-bottom: 40px;
+  padding-left: 5%; /* Un pequeño margen para que no se pegue al borde absoluto de la pantalla */
+}
 
- .region-selector-container label {
-   /* Ya no ocultamos el texto */
-   display: block;
-   font-weight: 700;
-   color: #333333;
-   font-size: 1rem;
- }
+.region-selector-container label {
+  /* Ya no ocultamos el texto */
+  display: block;
+  font-weight: 700;
+  color: #333333;
+  font-size: 1rem;
+}
 
- .region-dropdown {
-   color: #a32a22;
-   font-family: inherit;
-   font-weight: 700;
-   font-size: 0.9rem; /* Tamaño de tipografía reducido */
-   background-color: #ffffff;
-   padding: 8px 16px; /* Caja más estrecha y proporcionada */
-   border: 1px solid #e8e8e8;
-   border-radius: 6px;
-   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Sombra un poco más sutil */
-   cursor: pointer;
-   outline: none;
- }
+.region-dropdown {
+  color: #a32a22;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.9rem; /* Tamaño de tipografía reducido */
+  background-color: #ffffff;
+  padding: 8px 16px; /* Caja más estrecha y proporcionada */
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Sombra un poco más sutil */
+  cursor: pointer;
+  outline: none;
+}
 
+/* --- CONTENEDOR DE TARJETAS --- */
 .where-to-buy-cards {
   display: flex;
   gap: 50px;
@@ -52,7 +53,6 @@
   width: 320px;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
 }
@@ -80,19 +80,22 @@
   object-fit: contain;
 }
 
-/* Parte inferior de las tarjetas */
+/* --- PARTE INFERIOR DE LAS TARJETAS --- */
 .where-to-buy-bottom {
-  background-color: #fdebeb; /* El tono rosado claro */
-  padding: 20px;
+  background-color: #ffffff;
+  padding: 5px 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; /* Apila el nombre y el botón verticalmente */
+  align-items: center;    /* Centra ambos elementos horizontalmente */
+  justify-content: center;
+  gap: 15px;              /* Crea un espacio limpio entre el texto y el botón */
 }
 
 .where-to-buy-name {
   font-weight: 700;
   color: #333333;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 /* Botón de compra */
@@ -100,11 +103,12 @@
   background-color: #e13b2b; /* El rojo corporativo */
   color: #ffffff;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 30px; /* Botón un poco más grande */
   border-radius: 4px;
   font-weight: 700;
   cursor: pointer;
   transition: opacity 0.2s ease;
+  min-width: 150px;
 }
 
 .where-to-buy-btn:hover {
