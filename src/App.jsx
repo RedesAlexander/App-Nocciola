@@ -13,6 +13,7 @@ import TermsAndConditions from './components/TermsAndConditions/TermsAndConditio
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy'
 
 import './App.css';
+import ProductInfoSection from './components/Products/ProductInfoSection/ProductInfoSection';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/product_info" element={<ProductInfoSection />} />
         </Routes>
       </main>
 
