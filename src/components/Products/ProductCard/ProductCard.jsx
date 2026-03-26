@@ -1,12 +1,24 @@
+import { Link } from "react-router-dom";
 import "./ProductCard.css";
 
-function ProductCard({ image, name }) {
+function ProductCard({ product }) {
   return (
     <div className="product-card">
-      <div className="product-card__image-wrapper">
-        <img src={image} alt={name} className="product-card__image" />
-      </div>
-      <h3 className="product-card__title">{name}</h3>
+      <Link
+        to="/product_info"
+        state={{ product }}
+        className="product-card__link"
+      >
+        <div className="product-card__image-wrapper">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="product-card__image"
+          />
+        </div>
+
+        <h3 className="product-card__title">{product.name}</h3>
+      </Link>
     </div>
   );
 }
