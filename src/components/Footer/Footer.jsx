@@ -7,7 +7,7 @@ function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-logo">
-            <img src="/img/LOGO_NOCCIOLA.jpg" alt="Nocciola Logo" />
+            <img src="/img/Nocciola-blanco-sobre-rojo.jpg" alt="Nocciola Logo" />
           </div>
 
           <div className="footer-links">
