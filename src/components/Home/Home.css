@@ -41,7 +41,7 @@
   margin-bottom: 2.5rem;
 }
 
-/*  TEXTO --- */
+/* --- TEXTO --- */
 .home-hero-description {
   max-width: 700px;
 }
@@ -53,7 +53,7 @@
   font-weight: 700;
 }
 
-/* --  IMG -- */
+/* --- IMÁGENES --- */
 .images-placeholder {
   display: flex;
   flex-direction: column;
@@ -73,7 +73,12 @@
   transform: scale(1.05);
 }
 
-/* --- RESPONSIVE --- */
+.images-placeholder img:last-child {
+  width: 300px;   
+  height: auto;
+}
+
+
 @media (max-width: 768px) {
   .home-hero-container {
     padding: 3rem 15px;

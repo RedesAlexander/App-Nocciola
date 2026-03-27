@@ -6,6 +6,7 @@ function Home() {
   
   return (
     <section id="home" className="home-section">
+
       <div className="home-hero-container">
         <div className="home-hero-content">
           <div className="home-hero-text">
@@ -36,6 +37,7 @@ function Home() {
           alt="Nocciola Turron"
         />
       </div>
+
     </section>
   );
 }
