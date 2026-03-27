@@ -1,6 +1,6 @@
 /* --- SECCIÓN PRINCIPAL --- */
 .about-section {
-  background-image: url('img/EstampadoLogoNocciola.jpg');
+  background-image: url('/img/EstampadoLogoNocciola.jpg');
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-size: cover;      /* Escala la imagen para cubrir todo */
     background-position: center;  /* Centra la imagen dentro del contenedor */
