@@ -1,9 +1,9 @@
 /* --- SECCIÓN PRINCIPAL --- */
 .about-section {
   background-image: url('/img/EstampadoLogoNocciola.jpg');
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-size: cover;      /* Escala la imagen para cubrir todo */
-    background-position: center;  /* Centra la imagen dentro del contenedor */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-size: cover;      /* Escala la imagen para cubrir todo */
+  background-position: center;  /* Centra la imagen dentro del contenedor */
   padding: 4rem 20px;
   min-height: calc(100vh - 80px);
   display: flex;
@@ -30,27 +30,28 @@
 
 /* --- ESTILOS DEL LOGO --- */
 .about-logo {
-  max-width: 300px; /* Controla el tamaño. */
+  max-width: 850px; /* Aumentado para que llene más pantalla */
   width: 100%;      /* Hace que se adapte bien en pantallas de móviles */
   height: auto;     /* Evita que la imagen se deforme o aplaste */
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem; /* Un poco más de margen para que respire con el texto */
 }
 
 /* --- ESTILOS DE TEXTO --- */
 .about-description {
-  max-width: 600px; /* Evita que las líneas de texto sean demasiado largas en pantallas grandes */
+  max-width: 700px; /* Ampliado para acomodar la letra más grande */
 }
 
 .about-description p {
-  font-size: 1.125rem;
+  font-size: 1.4rem; /* Texto más grande */
   line-height: 1.8;
   margin-bottom: 1.5rem;
-  font-weight: 300;
+  font-weight: 700; /* Texto en negrita para destacar sobre el fondo */
 }
 
 .about-origin {
-  font-size: 1rem;
-  opacity: 0.9;
+  font-size: 1.2rem; /* Tamaño aumentado */
+  font-weight: 700; /* Texto en negrita */
+  opacity: 1; /* Opacidad al 100% para máxima legibilidad */
   font-style: italic;
   margin-top: 1rem;
-}
+ }
