@@ -1,6 +1,9 @@
 /* --- SECCIÓN PRINCIPAL --- */
 .about-section {
-  background-color: #E63946;
+  background-image: url('img/EstampadoLogoNocciola.jpg');
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover;      /* Escala la imagen para cubrir todo */
+    background-position: center;  /* Centra la imagen dentro del contenedor */
   padding: 4rem 20px;
   min-height: calc(100vh - 80px);
   display: flex;
