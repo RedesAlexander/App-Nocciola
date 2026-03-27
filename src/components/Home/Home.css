@@ -40,5 +40,9 @@
 }
 
 .images-placeholder img{
-  width: 500px;
+  width: 1000px;
+}
+.images-placeholder img:last-child {
+  width: 500px;   
+  height: auto;
 }

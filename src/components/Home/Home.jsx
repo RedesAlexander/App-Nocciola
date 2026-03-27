@@ -1,5 +1,6 @@
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
+
 function Home() {
   const navigate = useNavigate();
   return (
@@ -11,16 +12,23 @@ function Home() {
             alt="Hero Nocciola"
           />
         </div>
+
         <div className="images-placeholder">
-        <img onClick={() => navigate("/products")}
+          <img 
+            className="product-img"
+            onClick={() => navigate("/products")}
             src="/img/Nocciola_Almond_pstachio.png"
             alt="Hero Nocciola"
           />
-           <img onClick={() => navigate("/products")}
+
+          <img 
+            className="product-img"
+            onClick={() => navigate("/products")}
             src="/img/TurronCream6.png"
             alt="Hero Nocciola"
           />
         </div>
+
       </div>
     </section>
   );
