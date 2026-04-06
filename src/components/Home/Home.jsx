@@ -17,8 +17,8 @@ function Home() {
             />
             <div className="home-hero-description">
               <p>
-                Almonds and Pistachio Creams - Plant-based drink.
-                Natural, nutritious and crazy delicious.!
+                Nut butters and Plant-based drink. Anytime, anywhere, enjoy Nocciola, - Natural, nutritious, and
+                crazy delicious.!
               </p>
             </div>
           </div>
