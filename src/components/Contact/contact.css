@@ -2,7 +2,7 @@
   width: 100%;
   min-height: 100vh;
   background: #E63946;
-  padding: 20px 20px 40px;
+  padding: 55px 20px 70px; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,22 +12,22 @@
 .page-title {
   font-size: 28px;
   font-weight: 900;
-  margin-top: 0;
-  margin-bottom: 15px;
+  margin-top: 20px; 
+  margin-bottom: 30px;
   text-transform: uppercase;
 }
 
 .contact-form {
   width: 100%;
-  max-width: 413px;
+  max-width: 460px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 18px; 
 }
 
 .name-fields {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   width: 100%;
 }
 
@@ -43,8 +43,12 @@
   border: 1px solid rgba(255, 248, 248, 0.52);
   background: transparent;
   border-radius: 4px;
-  padding: 10px;
+  padding: 12px;
   color: white;
+}
+
+.contact-form textarea {
+  min-height: 130px; 
 }
 
 .contact-form input::placeholder,
@@ -62,13 +66,14 @@
 }
 
 .contact-form button {
-  height: 35px;
+  height: 42px; 
   background-color: white;
   color: #E63946;
   font-weight: 700;
   border: none;
   cursor: pointer;
   border-radius: 4px;
+  margin-top: 12px; 
 }
 
 .contact-form button:hover {
