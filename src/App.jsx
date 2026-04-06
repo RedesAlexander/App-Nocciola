@@ -11,6 +11,7 @@ import WhereToBuy from './components/Where-to-buy/Where-to-buy';
 import Recipes from './components/Recipes/Recipes';
 import TermsAndConditions from './components/TermsAndConditions/TermsAndConditions'
 import PrivacyPolicy from './components/PrivacyPolicy/PrivacyPolicy'
+import CookieBanner from './components/CookieBanner/CookieBanner';
 
 import './App.css';
 import ProductInfoSection from './components/Products/ProductInfoSection/ProductInfoSection';
@@ -37,6 +38,8 @@ function App() {
       </main>
 
       <Footer />
+      <CookieBanner />
+
     </>
   );
 }
