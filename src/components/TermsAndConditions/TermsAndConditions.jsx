@@ -8,67 +8,77 @@ function TermsAndConditions() {
           <h1>Terms and Conditions</h1>
 
           <div className="legal-text">
-            <p className="placeholder-text">
-              <p>Terms and Conditions</p>
-              <p>Website Owner Identification</p>
-
-              <p> LOUIS ALEXANDER ROYAL GROUP LLC (hereinafter referred to as "the Company"), with its
-              registered address at 1209 Mountain Rd PI NE STE R, Albuquerque, NM 87110, is the owner of
-              this website (hereinafter referred to as the “Website” or “Site,” interchangeably).
-              By browsing our website, you agree that its use is governed by the terms and conditions
-              described below. If you do not agree, please do not access, browse, or use the Website.
-              SUPER-MARKET-GOURMET reserves the right to modify the presentation, configuration, and
-              content of the Website, as well as to partially or fully modify these Terms and Conditions, in
-              which case users will be informed accordingly.
-              If you have any questions or comments regarding NOCCIOLA.ES terms of use, you may contact
-              us through our contact form.</p>
-
-             <p>Use of the Site</p>
-              <p>You may use the information available on the NOCCIOLA.ES website solely for personal purposes
-              and may not use it for commercial purposes unless otherwise stated. For any use for commercial
-              purposes (for example, reproduction), you must first obtain written authorization from
-              NOCCIOLA.ES and sign an agreement.
-              Use of the Website for purposes contrary to law is strictly prohibited, including but not limited to:
-              Misleading others.Offending public morality.Infringing intellectual property rights or similar
-              rights.Uploading content containing viruses or other programs that may damage your
-              computer.Transmitting, storing, or uploading hyperlinks or content to which the user has
-              no rights, especially when such links or content are illegal and violate personal data
-              protection laws.Distributing unsolicited advertising or emails (commonly known as spam).</p>
-
-              <p>Intellectual and Industrial Property Rights</p>
-              <p>All logos, trademarks, and trade names displayed on the Website are the property of
-              NOCCIOLA.ES and may only be used in accordance with NOCCIOLA.ES corporate policies.
-              Articles, information, and other materials on this Website are protected by industrial and/or
-              intellectual property laws. This means you may not—unless otherwise permitted by these Terms
-              and applicable law—modify, copy, reproduce, add to, or use any information or documents from
-              the Site without prior written consent from NOCCIOLA.ES</p>
-
-             <p> Links to Third-Party Websites</p>
-
-              <p>The NOCCIOLA.ES website may contain links to third-party websites. NOCCIOLA.ES is not
-              responsible for the content found on such linked sites. The risks associated with the use of these
-              sites are solely the user's responsibility.</p>
-
-              <p>Liability</p>
-              <p>NOCCIOLA.ES is the owner of this Website and, unless otherwise stated, of all the content
-              contained herein. NOCCIOLA.ES aims to ensure that the information on the Website is accurate
-              and up to date and will correct any errors brought to its attention.
-              However, the content does not constitute any contractual relationship, and NOCCIOLA.ES shall
-              not be liable for any loss or damage suffered by any user in relation to the information contained
-              on this site.</p>
-
-              <p>Any attempt to alter information or perform any other action that could damage or compromise
-              the integrity of the Website is strictly prohibited.</p>
-              <p>We use SSL (Secure Sockets Layer) software to protect your information during transmission.
-              The SSL protocol is a tested and highly secure data transfer protocol for the Internet.</p>
-
-              <p>Dispute Resolution</p>
-              <p>For disputes arising from the interpretation or execution of the Website's use, current Spanish
-              legislation will apply, and the Courts and Tribunals of Spain will have jurisdiction, provided that
-              the applicable regulations allow the parties to submit to a specific jurisdiction.</p>
+            <h2>1. Website Owner Identification</h2>
+            <p>
+              <strong>LOUIS ALEXANDER ROYAL GROUP LLC</strong> (hereinafter referred to as "the Company"), 
+              with its registered address at 1209 Mountain Rd PI NE STE R, Albuquerque, NM 87110, is the 
+              owner of this website (hereinafter referred to as the “Website” or “Site,” interchangeably).
+            </p>
+            <p>
+              By browsing our website, you agree that its use is governed by the terms and conditions 
+              described below. <strong>If you do not agree, please do not access, browse, or use the Website.</strong>
+            </p>
+            <p>
+              SUPER-MARKET-GOURMET reserves the right to modify the presentation, configuration, and 
+              content of the Website at any time.
             </p>
 
+            <h2>2. Use of the Site</h2>
+            <p>
+              You may use the information available on the <strong>NOCCIOLA.ES</strong> website solely for 
+              personal purposes. Any commercial use (such as reproduction) requires prior written 
+              authorization and a signed agreement.
+            </p>
+            
+            <p><strong>Strictly prohibited actions:</strong></p>
+            <ul>
+              <li>Misleading others or offending public morality.</li>
+              <li>Infringing intellectual property rights or similar rights.</li>
+              <li>Uploading content containing viruses or programs that may damage the Site or users.</li>
+              <li>Transmitting or uploading illegal content that violates data protection laws.</li>
+              <li>Distributing unsolicited advertising or emails (Spam).</li>
+            </ul>
 
+            <h2>3. Intellectual and Industrial Property Rights</h2>
+            <p>
+              All logos, trademarks, and trade names displayed on the Website are the property of 
+              <strong> NOCCIOLA.ES</strong>. 
+            </p>
+            <p>
+              Articles, information, and other materials are protected by industrial and intellectual property laws. 
+              You may not modify, copy, reproduce, or use any document from the Site without prior written 
+              consent.
+            </p>
+
+            <h2>4. Links to Third-Party Websites</h2>
+            <p>
+              The Website may contain links to third-party sites. <strong>NOCCIOLA.ES</strong> is not 
+              responsible for the content found on such sites. Use of these links is solely at the user's 
+              risk.
+            </p>
+
+            <h2>5. Liability and Security</h2>
+            <p>
+              We aim to ensure that information is accurate and up to date. However, the content does not 
+              constitute a contractual relationship, and the Company shall not be liable for any loss or 
+              damage related to the use of this information.
+            </p>
+            <p className="highlight-box">
+              <strong>Security:</strong> We use SSL (Secure Sockets Layer) software to protect your 
+              information during transmission, ensuring a highly secure data transfer protocol.
+            </p>
+
+            <h2>6. Dispute Resolution</h2>
+            <p>
+              For disputes arising from the use of this Website, <strong>Spanish legislation</strong> will 
+              apply. The Courts and Tribunals of Spain will have jurisdiction, provided that applicable 
+              regulations allow the parties to submit to a specific jurisdiction.
+            </p>
+
+            <footer className="legal-footer">
+              <p>Last updated: 28/03/2026</p>
+              <p>Copyright © LOUIS ALEXANDER ROYAL GROUP LLC. All rights reserved.</p>
+            </footer>
           </div>
         </div>
       </div>
