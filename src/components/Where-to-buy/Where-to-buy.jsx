@@ -16,10 +16,8 @@ const productLinks = {
 };
 
 function WhereToBuy() {
-  // Estado para guardar la región seleccionada (por defecto 'EU')
   const [region, setRegion] = useState("EU");
 
-  // Función manejadora para los botones
   const handleBuyClick = (productKey) => {
     const url = productLinks[productKey][region];
     window.open(url, "_blank", "noopener,noreferrer");
@@ -55,7 +53,10 @@ function WhereToBuy() {
             />
           </div>
           <div className="where-to-buy-bottom">
-            <span className="where-to-buy-name">Pistachio Cream</span>
+            <div className="where-to-buy-titles">
+              <span className="where-to-buy-name">Pistachio Cream</span>
+              <span className="where-to-buy-percent">55% Pistachio</span>
+            </div>
             <button
               className="where-to-buy-btn"
               onClick={() => handleBuyClick('pistachio')}
@@ -75,7 +76,10 @@ function WhereToBuy() {
             />
           </div>
           <div className="where-to-buy-bottom">
-            <span className="where-to-buy-name">Creamy Almond</span>
+            <div className="where-to-buy-titles">
+              <span className="where-to-buy-name">Creamy Almond</span>
+              <span className="where-to-buy-percent">66% Almond</span>
+            </div>
             <button
               className="where-to-buy-btn"
               onClick={() => handleBuyClick('almond')}
