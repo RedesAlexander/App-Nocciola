@@ -8,6 +8,7 @@ function Contact() {
     lastName: '',
     email: '',
     phone: '',
+    subject: 'General',
     message: ''
   });
 
@@ -18,53 +19,67 @@ function Contact() {
 
   // Función que se ejecuta al enviar el formulario
   const handleSubmit = (e) => {
-    e.preventDefault(); // Evita que la página se recargue
-    console.log('Formulario enviado:', formData); // Muestra los datos en la consola
-    alert('Formulario enviado! Revisa la consola para ver los datos.');
+    e.preventDefault();
+    console.log('Formulario enviado:', formData);
+    alert('Formulario enviado!');
   };
 
   return (
-    <section className="contact-page">
-      <h2 className="page-title">CONTACT US</h2>
+    <section className="contact-page"> 
+    <div className="contact-bloque">
+      <h2 className="page-title">Contact us</h2>
+      <p className="page-subtitle">
+        We’re here if you ever have any questions, comments, or just want to chat.
+      </p>
+
       <form className="contact-form" onSubmit={handleSubmit}>
         <div className="name-fields">
-          <input 
-            type="text" 
+          <input
+            type="text"
             name="firstName"
-            placeholder="First Name" 
-            value={formData.firstName} 
-            onChange={handleChange} 
+            placeholder="Name"
+            value={formData.firstName}
+            onChange={handleChange}
           />
-          <input 
-            type="text" 
-            name="lastName"
-            placeholder="Last Name" 
-            value={formData.lastName} 
-            onChange={handleChange} 
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
           />
         </div>
-        <input 
-          type="email" 
-          name="email"
-          placeholder="Email" 
-          value={formData.email} 
-          onChange={handleChange} 
-        />
-        <input 
-          type="tel" 
+
+        <input
+          type="tel"
           name="phone"
-          placeholder="Phone Number" 
-          value={formData.phone} 
-          onChange={handleChange} 
-        /> 
-        <textarea 
+          placeholder="Phone number"
+          value={formData.phone}
+          onChange={handleChange}
+        />
+
+        <label className="label">Subject</label>
+        <select
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+        >
+          <option>General</option>
+          <option>Support</option>
+          <option>Bussines</option>
+          <option>Other</option>
+        </select>
+
+        <textarea
           name="message"
-          placeholder="Message" 
-          value={formData.message} 
-          onChange={handleChange} 
+          placeholder="Comment"
+          value={formData.message}
+          onChange={handleChange}
         ></textarea>
-        <button type="submit">SEND</button>
+
+        <button type="submit">Send</button>
       </form>
+      </div>
     </section>
   );
 }
