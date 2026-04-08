@@ -82,7 +82,7 @@
 @media (max-width: 768px) {
   .home-hero-container {
     padding: 3rem 15px;
-    min-height: calc(100vh - 70px);
+    min-height: calc(65vh - 70px);
   }
 
   .home-hero-logo {
