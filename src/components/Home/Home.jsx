@@ -26,15 +26,23 @@ function Home() {
       </div>
 
       <div className="images-placeholder">
-        <img 
+        <img
           onClick={() => navigate("/products")}
-          src="/img/Nocciola_Almond_pstachio.png"
-          alt="Nocciola Products"
+          src="/img/home1.PNG"
+          alt="Nocciola Home 1"
+          className="home-gallery-img"
         />
-        <img 
+        <img
           onClick={() => navigate("/products")}
-          src="/img/TurronCream6.png"
-          alt="Nocciola Turron"
+          src="/img/home2.PNG"
+          alt="Nocciola Home 2"
+          className="home-gallery-img"
+        />
+        <img
+          onClick={() => navigate("/products")}
+          src="/img/home3.PNG"
+          alt="Nocciola Home 3"
+          className="home-gallery-img"
         />
       </div>
 
