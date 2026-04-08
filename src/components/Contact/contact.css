@@ -1,78 +1,110 @@
+/* Contenedor principal (Fondo blanco) */
 .contact-page {
-  width: 100%;
+  background: white; /* Fondo de la página blanco */
   min-height: 100vh;
-  background: #E63946;
-  padding: 20px 20px 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Bloque del formulario (Fondo rojo) */
+.contact-bloque {
+  background: #f75547; 
+  color: white;        
+  max-width: 600px;
+  width: 100%;
+  padding: 40px;       
+  border-radius: 20px; 
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
 }
 
 .page-title {
-  font-size: 28px;
-  font-weight: 900;
-  margin-top: 0;
-  margin-bottom: 15px;
-  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.page-subtitle {
+  max-width: 500px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9); 
 }
 
 .contact-form {
   width: 100%;
-  max-width: 413px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 18px;
 }
 
 .name-fields {
   display: flex;
-  gap: 12px;
-  width: 100%;
+  gap: 16px;
 }
 
-.name-fields input {
-  flex: 1;
-  width: auto;
-  color: white;
-}
-
+/* Ajuste de inputs para que resalten sobre el fondo rojo */
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
   width: 100%;
-  border: 1px solid rgba(255, 248, 248, 0.52);
-  background: transparent;
-  border-radius: 4px;
-  padding: 10px;
-  color: white;
+  padding: 14px;
+  border-radius: 25px;
+  border: 2px solid white; 
+  background: white;     
+  color: #1d3557;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  border-radius: 15px;
+  resize: vertical;
+}
+
+.label {
+  font-size: 14px;
+  margin-bottom: -5px;
+  align-self: flex-start;
+  font-weight: 600;
 }
 
 .contact-form input::placeholder,
-.contact-form textarea::placeholder,
-.name-fields input::placeholder {
-  color: white;
-  opacity: 1;
+.contact-form textarea::placeholder {
+  color: #a0a0a0;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus,
-.name-fields input:focus {
+.contact-form select:focus {
   outline: none;
-  border: 1px solid white;
+  border: 2px solid #1d3557;
 }
 
+/* Botón invertido para que se vea sobre el rojo */
 .contact-form button {
-  height: 35px;
-  background-color: white;
-  color: #E63946;
-  font-weight: 700;
+  margin-top: 20px;
+  align-self: center;
+  padding: 12px 60px;
+  background-color: #1d3557; 
+  color: white;
   border: none;
+  border-radius: 25px;
   cursor: pointer;
-  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 0.3s;
 }
 
 .contact-form button:hover {
-  background-color: #E63946;
-  color: white;
-  transition: all 0.3s ease;
+  background-color: #0d1e33;
+  transform: translateY(-2px);
 }

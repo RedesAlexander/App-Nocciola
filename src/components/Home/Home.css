@@ -41,7 +41,7 @@
   margin-bottom: 2.5rem;
 }
 
-/*  TEXTO --- */
+/* --- TEXTO --- */
 .home-hero-description {
   max-width: 700px;
 }
@@ -53,24 +53,29 @@
   font-weight: 700;
 }
 
-/* --  IMG -- */
+/* --- IMÁGENES --- */
 .images-placeholder {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
 }
 
-.images-placeholder img {
-  width: 500px;
+.home-gallery-img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 16px;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  margin-top: .5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.images-placeholder img:hover {
-  transform: scale(1.05);
+.home-gallery-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 /* --- RESPONSIVE --- */
@@ -89,9 +94,8 @@
     font-size: 1.2rem;
   }
 
-  .images-placeholder img {
-    width: 100%;
-    max-width: 400px;
+  .home-gallery-img {
+    max-width: 95%;
   }
 }
 
@@ -109,7 +113,5 @@
     font-size: 1rem;
   }
 
-  .images-placeholder img {
-    max-width: 300px;
-  }
+ 
 }
