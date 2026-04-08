@@ -53,29 +53,29 @@
   font-weight: 700;
 }
 
-/* --- IMÁGENES (Estructura Home + Estilos About) --- */
+/* --- IMÁGENES --- */
 .about-images-placeholder {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
-  padding: 3rem 20px; /* Añadido padding para que la sombra de la imagen no se corte */
+  padding: 3rem 20px;
   gap: 30px; /* Separación entre las imágenes */
 }
 
 .about-images-placeholder img {
-  max-width: 1050px; /* Recuperamos tu tamaño original */
+  max-width: 1050px;
   width: 100%;
   height: auto;
-  border-radius: 12px; /* Recuperamos bordes redondeados */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Recuperamos la sombra */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
 .about-images-placeholder img:hover {
-  transform: scale(1.02); /* Escala más suave al pasar el ratón, ideal para imágenes con sombra */
+  transform: scale(1.02);
 }
 
 /* --- RESPONSIVE --- */
@@ -94,7 +94,6 @@
     font-size: 1.2rem;
   }
 
-  /* El tamaño de la imagen ya es 100% por defecto, se adaptará perfecto */
 }
 
 @media (max-width: 480px) {
