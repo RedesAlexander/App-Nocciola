@@ -1,19 +1,24 @@
-/* --- SECCIÓN PRINCIPAL --- */
 .about-section {
-  background-image: url('/img/EstampadoLogoNocciola.jpg');
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-size: cover;      /* Escala la imagen para cubrir todo */
-  background-position: center;  /* Centra la imagen dentro del contenedor */
-  padding: 4rem 20px;
-  min-height: calc(100vh - 80px);
+  background-color: #f5f5f5;
+  min-height: 100vh;
   display: flex;
-  justify-content: center; /* Añadido para centrar el bloque horizontalmente */
+  flex-direction: column;
+  width: 100%;
+}
+
+.about-hero-container {
+  background-image: url('/img/EstampadoLogoNocciola.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 20px;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-/* --- CONTENEDOR CENTRAL --- */
-.about-content {
-  /* Sustituimos el Grid de dos columnas por Flexbox centrado */
+.about-hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,62 +26,88 @@
   width: 100%;
 }
 
-.about-text {
+.about-hero-text {
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Asegura que el logo y el texto estén perfectamente alineados */
-}
-/* --- GALERÍA DE IMÁGENES --- */
-.about-gallery {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
   align-items: center;
-  margin-top: 1rem;
-  width: 100%;
 }
 
-.about-gallery-image {
-  max-width: 1050px;
+/* --- LOGO --- */
+.about-hero-logo {
+  max-width: 850px;
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  object-fit: cover;
+  margin-bottom: 2.5rem;
 }
 
-/*Responsive: Si la pantalla es más pequeña se apilan */
-@media (max-width: 768px) {
-  .about-gallery {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-/* --- ESTILOS DEL LOGO --- */
-.about-logo {
-  max-width: 850px; /* Aumentado para que llene más pantalla */
-  width: 100%;      /* Hace que se adapte bien en pantallas de móviles */
-  height: auto;     /* Evita que la imagen se deforme o aplaste */
-  margin-bottom: 2.5rem; /* Un poco más de margen para que respire con el texto */
+/* --- TEXTO --- */
+.about-hero-description {
+  max-width: 700px;
 }
 
-/* --- ESTILOS DE TEXTO --- */
-.about-description {
-  max-width: 700px; /* Ampliado para acomodar la letra más grande */
-}
-
-.about-description p {
-  font-size: 1.4rem; /* Texto más grande */
+.about-hero-description p {
+  font-size: 1.4rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
-  font-weight: 700; /* Texto en negrita para destacar sobre el fondo */
+  font-weight: 700;
 }
 
-.about-origin {
-  font-size: 1.2rem; /* Tamaño aumentado */
-  font-weight: 700; /* Texto en negrita */
-  opacity: 1; /* Opacidad al 100% para máxima legibilidad */
-  font-style: italic;
-  margin-top: 1rem;
- }
+/* --- IMÁGENES (Estructura Home + Estilos About) --- */
+.about-images-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 3rem 20px; /* Añadido padding para que la sombra de la imagen no se corte */
+  gap: 30px; /* Separación entre las imágenes */
+}
+
+.about-images-placeholder img {
+  max-width: 1050px; /* Recuperamos tu tamaño original */
+  width: 100%;
+  height: auto;
+  border-radius: 12px; /* Recuperamos bordes redondeados */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Recuperamos la sombra */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.about-images-placeholder img:hover {
+  transform: scale(1.02); /* Escala más suave al pasar el ratón, ideal para imágenes con sombra */
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .about-hero-container {
+    padding: 3rem 15px;
+    min-height: calc(100vh - 70px);
+  }
+
+  .about-hero-logo {
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+
+  .about-hero-description p {
+    font-size: 1.2rem;
+  }
+
+  /* El tamaño de la imagen ya es 100% por defecto, se adaptará perfecto */
+}
+
+@media (max-width: 480px) {
+  .about-hero-container {
+    padding: 2rem 15px;
+  }
+
+  .about-hero-logo {
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-hero-description p {
+    font-size: 1rem;
+  }
+}
