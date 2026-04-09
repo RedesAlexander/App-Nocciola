@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  width: 97%;
+  width: 100%;
 }
 
 .home-hero-container {
@@ -60,22 +60,22 @@
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
-  padding: 2rem 1rem;
-  gap: 1.5rem;
+  padding: 3rem 20px;
+  gap: 30px;
 }
 
 .home-gallery-img {
+  max-width: 1050px;
   width: 100%;
-  max-width: 1211px;
   height: auto;
-  border-radius: 16px;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 .home-gallery-img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
 }
 
 /* --- RESPONSIVE --- */
