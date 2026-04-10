@@ -5,7 +5,11 @@ ruta \GitHub\App-nocciola
 
 PASO 1 
 COLOCAR EN LA TERMINAL npm install
-para instalar dependencias de node_modules
+
+para instalar dependencias 
+- node_modules
+- npm install react-tiktok
+
 
 PASO 2 
 COLOCAR EN LA TERMINAL npm install react-router-dom

@@ -115,3 +115,119 @@
 
  
 }
+
+
+/* --- CONTENEDOR TIKTOK con VISOR --- */
+.home-tiktok-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, #fff1f1 0%, #ffffff 100%);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Título más moderno */
+.tiktok-title {
+  margin-bottom: 40px;
+  font-size: 2rem;
+  color: #942727;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* --- CARRUSEL HORIZONTAL --- */
+.tiktok-grid {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 20px 10px 40px;
+  scroll-snap-type: x mandatory;
+  justify-content: flex-start;
+}
+
+/* Scroll suave */
+.tiktok-grid {
+  scroll-behavior: smooth;
+}
+
+/* Ocultar scrollbar (opcional más limpio) */
+.tiktok-grid::-webkit-scrollbar {
+  height: 6px;
+}
+.tiktok-grid::-webkit-scrollbar-thumb {
+  background: #e0a4a4;
+  border-radius: 10px;
+}
+
+/* --- CARD DE VIDEO --- */
+.tiktok-wrapper {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 540px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+
+  scroll-snap-align: center;
+
+  /* sombra elegante */
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.15),
+    0 5px 10px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.35s ease;
+}
+
+/* Hover efecto tipo “card elevada” */
+.tiktok-wrapper:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.2),
+    0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Iframe más suave */
+.tiktok-wrapper iframe {
+  border-radius: 18px;
+}
+
+/* --- EFECTO DE DESENFOQUE LATERAL (opcional PRO) --- */
+.tiktok-grid::before,
+.tiktok-grid::after {
+  content: "";
+  position: sticky;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tiktok-grid::before {
+  left: 0;
+  background: linear-gradient(to right, #fff1f1, transparent);
+}
+
+.tiktok-grid::after {
+  right: 0;
+  background: linear-gradient(to left, #ffffff, transparent);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .tiktok-wrapper {
+    width: 260px;
+    height: 480px;
+  }
+
+  .tiktok-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tiktok-wrapper {
+    width: 220px;
+    height: 420px;
+  }
+}
